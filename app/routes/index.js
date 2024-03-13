@@ -24,7 +24,7 @@ router.get("/:pokemonId", (req, res) => {
     const pokemonId = req.params.pokemonId;
     let pokemon = 0
     if (pokemonId === "fire" || pokemonId === "grass" || pokemonId === "water") {
-        pokemon = pokedex.filter( (pokemon) => pokemon.type === pokemonName);
+        pokemon = pokedex.filter( (pokemon) => pokemon.type === pokemonId);
     }else {
         pokemon = pokedex.find( (pokemons) => pokemons.pokemon === pokemonId || pokemons.id === pokemonId)
     };
@@ -60,7 +60,6 @@ router.delete("/:pokemonId", (req, res) => {
     const {pokemonId} = req.params;
     const pokemonIndex = pokedex.findIndex( (pokemons) => pokemons.id === pokemonId);
     pokedex.splice(pokemonIndex, 1)
-    console.log(pokemon)
     res.status(200).json({
         message: "delete - success",
         metadata: {
