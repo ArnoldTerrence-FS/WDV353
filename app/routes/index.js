@@ -1,9 +1,9 @@
 const express = require("express");
-const router = require("./routes")
+const router = express.Router();
 
 // http://localhost:3000/
 
-router.status("/", (req, res) => {
+router.get("/", (req, res) => {
     console.log("status = success");
     res.status(200).json({
         message: "Get - success",
@@ -28,4 +28,4 @@ router.get("/:id", (req, res) => {
 });
 
 
-module.exports = app ;
+module.exports = router ;
