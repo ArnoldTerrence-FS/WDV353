@@ -8,7 +8,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
     console.log("Get - Success")
     res.status(200).json({
-        message: "Get - success",
+        message: "Server is running!",
         metadata: {
             hostname: req.hostname, 
             method: req.method,

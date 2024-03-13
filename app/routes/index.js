@@ -9,7 +9,7 @@ const pokedex = [{id: "1" ,pokemon: "bulbasaur", type: "grass"}, {id: "2", pokem
 router.get("/", (req, res) => {
     console.log("status = success");
     res.status(200).json({
-        message: "Service is up and running!",
+        message: "Routes are good!",
         pokedex,
         metadata: {
             hostname: req.hostname, 
