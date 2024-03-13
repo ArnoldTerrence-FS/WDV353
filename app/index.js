@@ -6,8 +6,9 @@ app.use(express.json());
 
 // http://localhost:3000/
 app.get("/", (req, res) => {
+    console.log("Get - Success")
     res.status(200).json({
-        message: "Get - root",
+        message: "Get - success",
         metadata: {
             hostname: req.hostname, 
             method: req.method,
@@ -15,6 +16,6 @@ app.get("/", (req, res) => {
     })
 });
 
-app.use("api", router);
+app.use("/pokedex", router);
 
 module.exports = app ;
